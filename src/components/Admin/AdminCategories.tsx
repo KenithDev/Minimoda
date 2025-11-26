@@ -73,17 +73,18 @@ export const AdminCategories = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-black text-gray-800 mb-8 flex items-center gap-3">
-        <FolderOpen className="w-10 h-10 text-blue-600" />
-        Administrar Categorías
+    <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 py-4 sm:py-6 md:py-8 max-w-[1920px]">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
+        <FolderOpen className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-blue-600" />
+        <span className="hidden xs:inline">Administrar Categorías</span>
+        <span className="xs:hidden">Categorías</span>
       </h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
         {/* Formulario */}
         <div className="lg:col-span-1">
-          <div className="bg-white rounded-xl shadow-lg p-8 sticky top-24 border-2 border-gray-200">
-            <h2 className="text-2xl font-bold mb-8 text-gray-800 pb-4 border-b-2 border-blue-600 flex items-center gap-2">
+          <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-4 sm:p-6 md:p-8 lg:sticky lg:top-24 border-2 border-gray-200">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8 text-gray-800 pb-3 sm:pb-4 border-b-2 border-blue-600 flex items-center gap-1.5 sm:gap-2">
               {editingId ? (
                 <>
                   <Edit2 className="w-6 h-6 text-blue-600" />

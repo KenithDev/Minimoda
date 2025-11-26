@@ -1,11 +1,11 @@
 // ============================================
-// NAVBAR COMPONENT - Professional Responsive Design
+// CLIENT NAVBAR - Solo para clientes
 // ============================================
 
 import { useCart } from '../../hooks';
-import { Home, ShoppingCart, Settings } from 'lucide-react';
+import { Home, ShoppingCart } from 'lucide-react';
 
-export const Navbar = () => {
+export const ClientNavbar = () => {
   const { cantidadTotal } = useCart();
 
   return (
@@ -31,7 +31,7 @@ export const Navbar = () => {
             </div>
           </a>
           
-          {/* Navigation Links */}
+          {/* Navigation Links - Solo Cliente */}
           <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5">
             <a 
               href="#/" 
@@ -54,14 +54,6 @@ export const Navbar = () => {
                 )}
               </div>
               <span className="hidden md:inline text-sm md:text-base lg:text-lg xl:text-xl">Carrito</span>
-            </a>
-            
-            <a 
-              href="#/admin" 
-              className="px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 lg:px-7 lg:py-3.5 xl:px-8 xl:py-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-all duration-200 font-bold flex items-center gap-1.5 sm:gap-2 md:gap-2.5 lg:gap-3 group shadow-lg hover:shadow-xl border-2 border-blue-700"
-            >
-              <Settings className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 group-hover:rotate-90 transition-transform duration-300" />
-              <span className="hidden md:inline text-sm md:text-base lg:text-lg xl:text-xl">Admin</span>
             </a>
           </div>
         </div>
