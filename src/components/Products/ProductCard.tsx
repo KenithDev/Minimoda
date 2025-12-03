@@ -13,7 +13,7 @@ interface ProductCardProps {
 
 export const ProductCard = ({ producto, categoria, onAgregarCarrito }: ProductCardProps) => {
   return (
-    <div className="group bg-white rounded-lg sm:rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border-2 border-gray-100 hover:border-blue-500 transform hover:-translate-y-1">
+    <div className="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-[#5A4633] transform hover:-translate-y-1">
       <div className="relative overflow-hidden aspect-square bg-gray-50">
         <img 
           src={producto.imagenUrl} 
@@ -21,42 +21,41 @@ export const ProductCard = ({ producto, categoria, onAgregarCarrito }: ProductCa
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {producto.stock <= 5 && producto.stock > 0 && (
-          <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-orange-500 text-white px-2 py-1 sm:px-3 sm:py-1.5 rounded-md sm:rounded-lg text-[10px] sm:text-xs font-bold shadow-lg flex items-center gap-0.5 sm:gap-1">
-            <AlertCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-            <span className="hidden xs:inline">Solo </span>{producto.stock}<span className="hidden xs:inline"> unidades</span>
+          <div className="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded-md text-[10px] font-bold shadow-sm flex items-center gap-1">
+            <AlertCircle className="w-3 h-3" />
+            <span>Solo {producto.stock}</span>
           </div>
         )}
         {producto.stock === 0 && (
           <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center backdrop-blur-sm">
             <div className="text-center px-2">
-              <AlertCircle className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white mx-auto mb-1 sm:mb-2" />
-              <span className="text-white text-lg sm:text-xl md:text-2xl font-bold block">AGOTADO</span>
-              <span className="text-gray-300 text-xs sm:text-sm">Sin stock disponible</span>
+              <AlertCircle className="w-8 h-8 text-white mx-auto mb-1" />
+              <span className="text-white text-lg font-bold block">AGOTADO</span>
             </div>
           </div>
         )}
         {categoria && (
-          <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-blue-600 text-white px-2 py-1 sm:px-3 sm:py-1.5 rounded-md sm:rounded-lg text-[10px] sm:text-xs font-bold shadow-lg">
+          <div className="absolute top-2 left-2 bg-[#5A4633] text-white px-3 py-1 rounded-lg text-xs font-bold shadow-sm tracking-wide">
             {categoria.nombre}
           </div>
         )}
       </div>
       
-      <div className="p-3 sm:p-4 md:p-5">
-        <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1 sm:mb-2 line-clamp-1 group-hover:text-blue-600 transition-colors">
+      <div className="p-4">
+        <h3 className="text-base font-bold text-gray-900 mb-1 line-clamp-1 group-hover:text-[#5A4633] transition-colors">
           {producto.nombre}
         </h3>
         
-        <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 h-8 sm:h-10">
+        <p className="text-gray-500 text-xs mb-3 line-clamp-2 h-8 leading-relaxed">
           {producto.descripcion}
         </p>
         
-        <div className="flex items-center justify-between mb-3 sm:mb-4">
+        <div className="flex items-end justify-between mb-4">
           <div className="flex flex-col">
-            <span className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600">
-              ${producto.precio.toFixed(2)}
+            <span className="text-lg font-bold text-[#5A4633]">
+              S/ {producto.precio.toFixed(2)}
             </span>
-            <span className={`text-xs mt-1 font-medium ${
+            <span className={`text-[10px] font-medium ${
               producto.stock > 10 ? 'text-green-600' : 
               producto.stock > 0 ? 'text-orange-600' : 
               'text-red-600'
@@ -69,11 +68,10 @@ export const ProductCard = ({ producto, categoria, onAgregarCarrito }: ProductCa
         <button
           onClick={() => onAgregarCarrito(producto.idProducto)}
           disabled={producto.stock === 0}
-          className="w-full bg-blue-600 text-white py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 font-bold shadow-md hover:shadow-lg flex items-center justify-center gap-1.5 sm:gap-2 transform active:scale-95 text-xs sm:text-sm md:text-base"
+          className="w-full bg-[#5A4633] text-white py-2.5 px-4 rounded-lg hover:bg-[#3D2F24] disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-200 font-bold shadow-sm hover:shadow-md flex items-center justify-center gap-2 transform active:scale-95 text-sm"
         >
-          <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5" />
-          <span className="hidden xs:inline">{producto.stock === 0 ? 'Sin Stock' : 'Agregar al Carrito'}</span>
-          <span className="xs:hidden">{producto.stock === 0 ? 'Agotado' : 'Agregar'}</span>
+          <ShoppingCart className="w-4 h-4" />
+          <span>{producto.stock === 0 ? 'Agotado' : 'Agregar'}</span>
         </button>
       </div>
     </div>
