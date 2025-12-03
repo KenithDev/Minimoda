@@ -131,31 +131,7 @@ export const AdminLogin = () => {
           </div>
         </div>
 
-        {/* Info Demo */}
-        <div className="bg-[#F5EFE7] border border-[#D4A574] rounded-xl p-6">
-          <div className="flex items-start gap-4">
-            <div className="shrink-0 mt-0.5">
-              <div className="w-12 h-12 bg-[#E8DCC4] rounded-xl flex items-center justify-center">
-                <ShieldCheck className="w-6 h-6 text-[#5A4633]" />
-              </div>
-            </div>
-            <div className="flex-1 space-y-2">
-              <p className="text-base font-semibold text-[#3D2F24]">
-                Credenciales Demo
-              </p>
-              <div className="grid grid-cols-1 gap-2 text-sm">
-                <div className="flex items-center justify-between bg-white/50 p-2 rounded-lg">
-                  <span className="text-gray-600">Usuario:</span>
-                  <code className="font-mono font-bold text-[#5A4633]">admin@minimoda.com</code>
-                </div>
-                <div className="flex items-center justify-between bg-white/50 p-2 rounded-lg">
-                  <span className="text-gray-600">Password:</span>
-                  <code className="font-mono font-bold text-[#5A4633]">admin123</code>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   );
