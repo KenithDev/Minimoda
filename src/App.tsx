@@ -10,6 +10,7 @@ import { ToastContainer } from './components/Toast';
 import { Router, Route } from './components/Router/Router';
 import { ClientNavbar } from './components/Layout/ClientNavbar';
 import { AdminNavbar } from './components/Layout/AdminNavbar';
+import { WhatsAppButton } from './components/Layout/WhatsAppButton';
 import { ProductList } from './components/Products/ProductList';
 import { Cart } from './components/Cart/Cart';
 import { Checkout } from './components/Checkout/Checkout';
@@ -39,16 +40,19 @@ function AppContent() {
         <Route path="/">
           <ClientNavbar />
           <ProductList />
+          <WhatsAppButton />
         </Route>
         
         <Route path="/carrito">
           <ClientNavbar />
           <Cart />
+          <WhatsAppButton />
         </Route>
 
         <Route path="/checkout">
           <ClientNavbar />
           <Checkout />
+          <WhatsAppButton />
         </Route>
         
         {/* Ruta de Login Admin */}
