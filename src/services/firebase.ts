@@ -2,20 +2,22 @@
 // FIREBASE CONFIGURATION & SERVICES
 // ============================================
 
-import { initializeApp } from 'firebase/app';
-import { 
-  getFirestore, 
-  collection, 
-  getDocs, 
-  doc, 
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
   getDoc,
-  addDoc, 
-  updateDoc, 
+  setDoc,
+  addDoc,
+  updateDoc,
   deleteDoc,
   query,
   where,
-  type DocumentData
-} from 'firebase/firestore';
+  type DocumentData,
+} from "firebase/firestore";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -24,19 +26,34 @@ const firebaseConfig = {
   projectId: "hay-una-ia-en-mi-jardin",
   storageBucket: "hay-una-ia-en-mi-jardin.firebasestorage.app",
   messagingSenderId: "380436575923",
-  appId: "1:380436575923:web:d8452653fbd2b94925a2c6"
+  appId: "1:380436575923:web:d8452653fbd2b94925a2c6",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
 // Collection names
 export const COLLECTIONS = {
-  PRODUCTOS: 'productos',
-  CATEGORIAS: 'categorias',
-  CARRITO: 'carrito'
+  PRODUCTOS: "productos",
+  CATEGORIAS: "categorias",
+  CARRITO: "carrito",
+  USUARIOS: "usuarios",
 } as const;
 
-export { db, collection, getDocs, doc, getDoc, addDoc, updateDoc, deleteDoc, query, where };
+export {
+  auth,
+  db,
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+  setDoc,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  query,
+  where,
+};
 export type { DocumentData };
